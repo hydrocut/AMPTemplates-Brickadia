@@ -1,0 +1,8 @@
+[
+    {
+        "ConfigFile": "reglages-amp.txt",
+        "ConfigType": "template",
+        "AutoMap": true,
+        "ConfigFileTemplate": "brickadia/AMP_reglages.txt"
+    }
+]

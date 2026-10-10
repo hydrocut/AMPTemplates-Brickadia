@@ -1,0 +1,182 @@
+[
+    {
+        "DisplayName": "Jeton d'hébergement",
+        "Category": "Brickadia:public",
+        "Subcategory": "Accès et administration:lock:1",
+        "Description": "Obligatoire : sans lui, Brickadia refuse de démarrer. Le créer sur https://brickadia.com/account/tokens avec le compte Brickadia qui possède le jeu, puis le coller ici. Ce compte devient le propriétaire du serveur en jeu (tous les droits). Un jeton par serveur ; s'il expire ou s'il est révoqué, en créer un nouveau et relancer. Il passe au serveur par une variable d'environnement et le jeu le masque dans son journal. Ne le partage jamais.",
+        "Keywords": "jeton,token,hebergement,hosting,compte,authentification",
+        "FieldName": "JetonHebergement",
+        "InputType": "password",
+        "ParamFieldName": "JetonHebergement",
+        "IncludeInCommandLine": false,
+        "ExcludeFromImport": true,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Mot de passe du serveur",
+        "Category": "Brickadia:public",
+        "Subcategory": "Accès et administration:lock:1",
+        "Description": "Demandé aux joueurs pour entrer. Vide = serveur ouvert à tous. Accents, espaces et guillemets acceptés.",
+        "Keywords": "mot de passe,password,prive,acces",
+        "FieldName": "MotDePasse",
+        "InputType": "password",
+        "ParamFieldName": "MotDePasse",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Nom du serveur",
+        "Category": "Brickadia:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "Le nom affiché dans la liste des serveurs de Brickadia (Join Game). Accents, virgules et guillemets acceptés. AMP le réécrit à chaque démarrage : un changement fait en jeu (Menu > Edit Game) est remplacé par cette valeur.",
+        "Keywords": "nom,name,servername,titre",
+        "FieldName": "NomServeur",
+        "InputType": "text",
+        "ParamFieldName": "NomServeur",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "Serveur francophone TeamKit.fr",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Description",
+        "Category": "Brickadia:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "Texte affiché sous le nom dans la liste des serveurs. Vide = pas de description.",
+        "Keywords": "description,serverdescription,presentation",
+        "FieldName": "DescriptionServeur",
+        "InputType": "text",
+        "ParamFieldName": "DescriptionServeur",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "Serveur francophone hébergé gratuitement par TeamKit.fr — Discord : discord.gg/EuAjGMYPHY",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Message d'accueil",
+        "Category": "Brickadia:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "Envoyé dans le chat à chaque joueur qui arrive. {1} = le nom du joueur, {2} = le nom du serveur (comme dans le message par défaut du jeu). Le jeu accepte ses balises de mise en forme, par exemple <b>gras</> ou <color=\"0055ff\">bleu</>. Vide = pas de message.",
+        "Keywords": "accueil,bienvenue,welcome,motd,message",
+        "FieldName": "MessageAccueil",
+        "InputType": "text",
+        "ParamFieldName": "MessageAccueil",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "Bienvenue sur <b>{2}</>, {1} ! Serveur francophone hébergé gratuitement par TeamKit.fr — Discord : discord.gg/EuAjGMYPHY",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Joueurs maximum",
+        "Category": "Brickadia:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "Nombre de places. Chaque joueur connecté charge le serveur (briques, physique) : 20 est un bon départ.",
+        "Keywords": "joueurs,places,max,slots,maxplayers",
+        "FieldName": "$MaxUsers",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "100",
+        "ParamFieldName": "MaxPlayers",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "20",
+        "Suffix": "joueurs",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Visible dans la liste publique",
+        "Category": "Brickadia:public",
+        "Subcategory": "Serveur:dns:2",
+        "Description": "Coché : le serveur apparaît dans la liste des serveurs de Brickadia. Décoché : on ne le rejoint qu'en tapant l'adresse (Join Game > Connect Manually).",
+        "Keywords": "public,liste,listed,visible,publiclylisted",
+        "FieldName": "ListePublique",
+        "InputType": "checkbox",
+        "ParamFieldName": "ListePublique",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "True",
+        "EnumValues": {
+            "False": "False",
+            "True": "True"
+        }
+    },
+    {
+        "DisplayName": "Nom du monde",
+        "Category": "Brickadia:public",
+        "Subcategory": "Monde et sauvegardes:save:3",
+        "Description": "Le monde chargé à chaque démarrage (fichier donnees/Saved/Worlds/<nom>.brdb) et sur lequel vont les sauvegardes. S'il n'existe pas, le serveur le crée au premier démarrage sur le décor choisi ci-dessous. 1 à 40 caractères : lettres sans accent, chiffres, _ ou -, sans espace. Changer de nom = passer à un autre monde : l'ancien reste dans son fichier.",
+        "Keywords": "monde,world,carte,map,sauvegarde,brdb",
+        "FieldName": "Monde",
+        "InputType": "text",
+        "ParamFieldName": "Monde",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "TeamKit",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Décor d'un nouveau monde",
+        "Category": "Brickadia:public",
+        "Subcategory": "Monde et sauvegardes:save:3",
+        "Description": "Utilisé seulement quand le monde ci-dessus n'existe pas encore. Un monde déjà créé garde son décor.",
+        "Keywords": "decor,environnement,environment,carte,map,plate,peaks",
+        "FieldName": "Decor",
+        "InputType": "enum",
+        "ParamFieldName": "Decor",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "Plate",
+        "EnumValues": {
+            "Plate": "Plaque (grande surface plane, le décor par défaut)",
+            "Peaks": "Montagnes (terrain en relief)",
+            "Studio": "Studio",
+            "Space": "Espace"
+        }
+    },
+    {
+        "DisplayName": "Sauvegarde automatique",
+        "Category": "Brickadia:public",
+        "Subcategory": "Monde et sauvegardes:save:3",
+        "Description": "Le serveur enregistre le monde à intervalle régulier. En plus, TeamKit l'enregistre à chaque arrêt demandé par AMP.",
+        "Keywords": "sauvegarde,autosave,auto,save",
+        "FieldName": "SauvegardeAuto",
+        "InputType": "checkbox",
+        "ParamFieldName": "SauvegardeAuto",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "True",
+        "EnumValues": {
+            "False": "False",
+            "True": "True"
+        }
+    },
+    {
+        "DisplayName": "Intervalle de sauvegarde",
+        "Category": "Brickadia:public",
+        "Subcategory": "Monde et sauvegardes:save:3",
+        "Description": "Temps entre deux sauvegardes automatiques (5 minutes = défaut du jeu). Un très grand monde peut figer le serveur un court instant pendant la sauvegarde.",
+        "Keywords": "intervalle,sauvegarde,autosave,interval,minutes",
+        "FieldName": "IntervalleSauvegarde",
+        "InputType": "enum",
+        "ParamFieldName": "IntervalleSauvegarde",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "5",
+        "EnumValues": {
+            "5": "5 minutes",
+            "10": "10 minutes",
+            "15": "15 minutes",
+            "30": "30 minutes",
+            "60": "1 heure"
+        }
+    },
+    {
+        "DisplayName": "Annoncer les sauvegardes dans le chat",
+        "Category": "Brickadia:public",
+        "Subcategory": "Monde et sauvegardes:save:3",
+        "Description": "Coché (défaut du jeu) : un message prévient les joueurs à chaque sauvegarde automatique.",
+        "Keywords": "annonce,sauvegarde,chat,announce",
+        "FieldName": "AnnonceSauvegarde",
+        "InputType": "checkbox",
+        "ParamFieldName": "AnnonceSauvegarde",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "True",
+        "EnumValues": {
+            "False": "False",
+            "True": "True"
+        }
+    }
+]

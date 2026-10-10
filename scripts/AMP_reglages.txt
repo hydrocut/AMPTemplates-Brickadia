@@ -1,0 +1,16 @@
+# reglages-amp.txt - ECRIT PAR AMP a chaque demarrage, a partir de AMP_reglages.txt.
+# Ne le modifie pas a la main : change les reglages dans l'onglet Configuration d'AMP.
+# lancer-brickadia.py le lit et recopie ces valeurs dans
+# donnees/Saved/Config/LinuxServer/GameUserSettings.ini (le reste de ce fichier est garde).
+# Une ligne par reglage, cle=valeur : la valeur va jusqu'au bout de la ligne,
+# guillemets, virgules, accents et # compris.
+nom={{NomServeur}}
+description={{DescriptionServeur}}
+accueil={{MessageAccueil}}
+motdepasse={{MotDePasse}}
+public={{ListePublique}}
+monde={{Monde}}
+decor={{Decor}}
+sauvegarde_auto={{SauvegardeAuto}}
+intervalle={{IntervalleSauvegarde}}
+annonce={{AnnonceSauvegarde}}

@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 7777,
+        "Ref": "GamePort",
+        "Name": "Port du jeu",
+        "Description": "Seul port a ouvrir, en UDP. 7777 est le port par defaut de Brickadia. Le serveur annonce ce numero a la liste des serveurs : le port ouvert dehors doit etre le meme que celui du serveur (jamais de redirection 7778 vers 7777)."
+    }
+]

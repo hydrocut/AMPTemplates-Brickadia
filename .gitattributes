@@ -1,0 +1,3 @@
+# Les scripts sont lus dans le conteneur (python3, AMP) : toujours en LF.
+*.py text eol=lf
+*.txt text eol=lf

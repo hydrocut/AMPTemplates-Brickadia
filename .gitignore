@@ -1,0 +1,10 @@
+# Ce depot ne contient que le template. Le serveur Brickadia vient de SteamCMD
+# (app 3017590) ; le jeton d'hebergement, les mondes et les reglages restent sur le serveur.
+serveur/
+donnees/
+reglages-amp.txt
+*.brdb
+__pycache__/
+
+# Notes internes de TeamKit (essais, etapes), pas dans le depot public
+FAISABILITE.md
